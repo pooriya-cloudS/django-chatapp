@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     "chat.apps.ChatConfig",
     "users.apps.UsersConfig",
     "notifications.apps.NotificationsConfig",
+    'rest_framework',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -71,7 +73,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "chat_application.wsgi.application"
+# WSGI_APPLICATION = "chat_application.wsgi.application"
+ASGI_APPLICATION = "chat_application.asgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
@@ -88,6 +91,15 @@ DATABASES = {
             "NAME": os.environ.get("TEST_DB_NAME"),
         },
     }
+}
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6379)],
+        },
+    },
 }
 
 # Password validation
