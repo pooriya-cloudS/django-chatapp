@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     "chat.apps.ChatConfig",
     "users.apps.UsersConfig",
     "notifications.apps.NotificationsConfig",
-    'rest_framework',
-    'channels',
+    "rest_framework",
+    "channels",
 ]
 
 MIDDLEWARE = [
