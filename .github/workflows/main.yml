@@ -58,10 +58,10 @@ jobs:
             sleep 1
           done
      - name: Run migrations
-       run: python appointment_mediqe/manage.py migrate
+       run: python chat_application/manage.py migrate
 
      - name: Run tests
-       run: python appointment_mediqe/manage.py test
+       run: python chat_application/manage.py test
         
 
       
